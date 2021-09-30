@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+    char a[] = "Hello";
+    char b[] = "Fall";
+    int c = 2021;
+    
+    
+    printf("%s %s %d", a,b,c);
+
+    return 0;
+}
