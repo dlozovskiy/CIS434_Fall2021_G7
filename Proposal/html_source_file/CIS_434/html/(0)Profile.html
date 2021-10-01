@@ -1,10 +1,44 @@
 <html>
 <head>
 <title>Profile And Contributions</title>
-
+<p><h1>Food Ordering System</h1>
+<p><h2>Team Profile and Contributions</h2>
 </head>
 <body>
+<h3>Contributions</h3>
+<p>Here is a list of the contributions each team member made:</p>
+<div class="row">
+  <div class="column"> <h3>Daniel</h3><p>Text</p></div>
+  <div class="column"> <h3>Qing</h3><p>Text</p></div>
+  <div class="column"> <h3>Zack</h3><p>Text</p></div>
+</div>
 
-
+<h3>Member Profiles:</h3>
+<h3>
+    <ul>
+        <p><li><a href="Daniel bio.html">Daniel Lozovskiy</a>
+        <p><li><a href="Jane bio.html">Qing Liang</a>
+        <p><li><a href="Zack bio.html">Zack Lewis</a>
+</h3>
 </body>
 </html>
+
+<style>
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
