@@ -8,3 +8,15 @@ C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_code\POS Ordering Sys
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS Ordering System.csproj.CoreCompileInputs.cache
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS Ordering System.exe
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS Ordering System.pdb
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\bin\Debug\DatabasePOS.mdf
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\bin\Debug\DatabasePOS_log.ldf
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\bin\Debug\POS Ordering System.exe.config
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\bin\Debug\POS Ordering System.exe
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\bin\Debug\POS Ordering System.pdb
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS Ordering System.csproj.AssemblyReference.cache
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS_Ordering_System.Form1.resources
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS_Ordering_System.Properties.Resources.resources
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS Ordering System.csproj.GenerateResource.cache
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS Ordering System.csproj.CoreCompileInputs.cache
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS Ordering System.exe
+C:\Users\Daniel Lozovskiy\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_code\POS Ordering System\POS Ordering System\obj\Debug\POS Ordering System.pdb

@@ -34,6 +34,11 @@ namespace POS_Ordering_System
         {
             if (index > 0) listPanel[--index].BringToFront();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  
