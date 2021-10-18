@@ -1,4 +1,0 @@
-﻿CREATE TABLE [dbo].[Table]
-(
-	[ProductID] INT NOT NULL PRIMARY KEY IDENTITY
-)
