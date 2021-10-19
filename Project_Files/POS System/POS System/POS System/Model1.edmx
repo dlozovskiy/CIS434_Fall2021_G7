@@ -4,20 +4,131 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DataPOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="DataPOSModelStoreContainer" />
+      <Schema Namespace="DataPOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLmenuItem">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuType" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBLorder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBLorderItem">
+          <Key>
+            <PropertyRef Name="OrderItemID" />
+          </Key>
+          <Property Name="OrderItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="MenuID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbProductType">
+          <Key>
+            <PropertyRef Name="ProductType" />
+          </Key>
+          <Property Name="ProductType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="DataPOSModelStoreContainer">
+          <EntitySet Name="TBLmenuItem" EntityType="Self.TBLmenuItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLorder" EntityType="Self.TBLorder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLorderItem" EntityType="Self.TBLorderItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TbProductType" EntityType="Self.TbProductType" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DataPOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="DataPOSEntities" annotation:LazyLoadingEnabled="true" />
+        <EntityType Name="TBLmenuItem">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuType" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBLorder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="TBLorderItem">
+          <Key>
+            <PropertyRef Name="OrderItemID" />
+          </Key>
+          <Property Name="OrderItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="MenuID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TbProductType">
+          <Key>
+            <PropertyRef Name="ProductType" />
+          </Key>
+          <Property Name="ProductType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DataPOSEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLmenuItems" EntityType="Self.TBLmenuItem" />
+          <EntitySet Name="TBLorders" EntityType="Self.TBLorder" />
+          <EntitySet Name="TBLorderItems" EntityType="Self.TBLorderItem" />
+          <EntitySet Name="TbProductTypes" EntityType="Self.TbProductType" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DataPOSModelStoreContainer" CdmEntityContainer="DataPOSEntities" />
+        <EntityContainerMapping StorageEntityContainer="DataPOSModelStoreContainer" CdmEntityContainer="DataPOSEntities1">
+          <EntitySetMapping Name="TBLmenuItems">
+            <EntityTypeMapping TypeName="DataPOSModel.TBLmenuItem">
+              <MappingFragment StoreEntitySet="TBLmenuItem">
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="MenuType" ColumnName="MenuType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLorders">
+            <EntityTypeMapping TypeName="DataPOSModel.TBLorder">
+              <MappingFragment StoreEntitySet="TBLorder">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLorderItems">
+            <EntityTypeMapping TypeName="DataPOSModel.TBLorderItem">
+              <MappingFragment StoreEntitySet="TBLorderItem">
+                <ScalarProperty Name="OrderItemID" ColumnName="OrderItemID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TbProductTypes">
+            <EntityTypeMapping TypeName="DataPOSModel.TbProductType">
+              <MappingFragment StoreEntitySet="TbProductType">
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
