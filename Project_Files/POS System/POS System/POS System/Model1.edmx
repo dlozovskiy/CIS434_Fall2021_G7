@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DataPOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DataPOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLchart">
+          <Key>
+            <PropertyRef Name="TblNum" />
+          </Key>
+          <Property Name="TblNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TblStatus" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="TblReseve" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
         <EntityType Name="TBLmenuItem">
           <Key>
             <PropertyRef Name="MenuID" />
@@ -30,7 +38,7 @@
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="MenuID" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="TbProductType">
+        <EntityType Name="TBLProductType">
           <Key>
             <PropertyRef Name="ProductType" />
           </Key>
@@ -38,13 +46,13 @@
           <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="DataPOSModelStoreContainer">
+          <EntitySet Name="TBLchart" EntityType="Self.TBLchart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLmenuItem" EntityType="Self.TBLmenuItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLorder" EntityType="Self.TBLorder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLorderItem" EntityType="Self.TBLorderItem" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TbProductType" EntityType="Self.TbProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLProductType" EntityType="Self.TBLProductType" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DataPOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -73,19 +81,28 @@
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="MenuID" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="TbProductType">
+        <EntityContainer Name="DataPOSEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLmenuItems" EntityType="Self.TBLmenuItem" />
+          <EntitySet Name="TBLorders" EntityType="Self.TBLorder" />
+          <EntitySet Name="TBLorderItems" EntityType="Self.TBLorderItem" />
+          <EntitySet Name="TBLcharts" EntityType="DataPOSModel.TBLchart" />
+          <EntitySet Name="TBLProductTypes" EntityType="DataPOSModel.TBLProductType" />
+        </EntityContainer>
+        <EntityType Name="TBLchart">
+          <Key>
+            <PropertyRef Name="TblNum" />
+          </Key>
+          <Property Name="TblNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TblStatus" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TblReseve" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="TBLProductType">
           <Key>
             <PropertyRef Name="ProductType" />
           </Key>
           <Property Name="ProductType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="DataPOSEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TBLmenuItems" EntityType="Self.TBLmenuItem" />
-          <EntitySet Name="TBLorders" EntityType="Self.TBLorder" />
-          <EntitySet Name="TBLorderItems" EntityType="Self.TBLorderItem" />
-          <EntitySet Name="TbProductTypes" EntityType="Self.TbProductType" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -120,11 +137,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TbProductTypes">
-            <EntityTypeMapping TypeName="DataPOSModel.TbProductType">
-              <MappingFragment StoreEntitySet="TbProductType">
-                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <EntitySetMapping Name="TBLcharts">
+            <EntityTypeMapping TypeName="DataPOSModel.TBLchart">
+              <MappingFragment StoreEntitySet="TBLchart">
+                <ScalarProperty Name="TblReseve" ColumnName="TblReseve" />
+                <ScalarProperty Name="TblStatus" ColumnName="TblStatus" />
+                <ScalarProperty Name="TblNum" ColumnName="TblNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLProductTypes">
+            <EntityTypeMapping TypeName="DataPOSModel.TBLProductType">
+              <MappingFragment StoreEntitySet="TBLProductType">
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
