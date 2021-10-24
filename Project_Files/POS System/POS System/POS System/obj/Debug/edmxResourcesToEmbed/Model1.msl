@@ -1,41 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DataPOSModelStoreContainer" CdmEntityContainer="DataPOSEntities1">
-    <EntitySetMapping Name="TBLmenuItems">
-      <EntityTypeMapping TypeName="DataPOSModel.TBLmenuItem">
-        <MappingFragment StoreEntitySet="TBLmenuItem">
-          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
-          <ScalarProperty Name="MenuType" ColumnName="MenuType" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TBLorders">
-      <EntityTypeMapping TypeName="DataPOSModel.TBLorder">
-        <MappingFragment StoreEntitySet="TBLorder">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TBLorderItems">
-      <EntityTypeMapping TypeName="DataPOSModel.TBLorderItem">
-        <MappingFragment StoreEntitySet="TBLorderItem">
-          <ScalarProperty Name="OrderItemID" ColumnName="OrderItemID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TbProductTypes">
-      <EntityTypeMapping TypeName="DataPOSModel.TbProductType">
-        <MappingFragment StoreEntitySet="TbProductType">
-          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-  </EntityContainerMapping>
+  <EntityContainerMapping StorageEntityContainer="DataPOSModelStoreContainer" CdmEntityContainer="DataPOSEntities" />
 </Mapping>

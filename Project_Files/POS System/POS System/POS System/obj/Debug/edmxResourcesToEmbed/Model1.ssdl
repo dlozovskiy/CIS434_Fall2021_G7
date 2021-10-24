@@ -1,41 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DataPOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="TBLmenuItem">
-    <Key>
-      <PropertyRef Name="MenuID" />
-    </Key>
-    <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MenuType" Type="int" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Price" Type="money" Nullable="false" />
-    <Property Name="Image" Type="image" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TBLorder">
-    <Key>
-      <PropertyRef Name="OrderID" />
-    </Key>
-    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="OrderDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TBLorderItem">
-    <Key>
-      <PropertyRef Name="OrderItemID" />
-    </Key>
-    <Property Name="OrderItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="OrderID" Type="int" Nullable="false" />
-    <Property Name="MenuID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TbProductType">
-    <Key>
-      <PropertyRef Name="ProductType" />
-    </Key>
-    <Property Name="ProductType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" />
-  </EntityType>
-  <EntityContainer Name="DataPOSModelStoreContainer">
-    <EntitySet Name="TBLmenuItem" EntityType="Self.TBLmenuItem" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TBLorder" EntityType="Self.TBLorder" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TBLorderItem" EntityType="Self.TBLorderItem" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TbProductType" EntityType="Self.TbProductType" Schema="dbo" store:Type="Tables" />
-  </EntityContainer>
+<Schema Namespace="DataPOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DataPOSModelStoreContainer" />
 </Schema>

@@ -5,11 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="479b6fdc10ca4c6bad1c42f3991b79b4" Name="Diagram1">
-        <EntityTypeShape EntityType="DataPOSModel.TBLmenuItem" Width="1.5" PointX="0.5" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPOSModel.TBLorder" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPOSModel.TBLorderItem" Width="1.5" PointX="2.375" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPOSModel.TBLchart" Width="1.5" PointX="4.25" PointY="0.875" />
-        <EntityTypeShape EntityType="DataPOSModel.TBLProductType" Width="1.75" PointX="3.375" PointY="3.25" />
+        <EntityTypeShape EntityType="DataPOSModel.TBLmenuItem" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPOSModel.TBLorder" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPOSModel.TBLorderItem" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPOSModel.TbProductType" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

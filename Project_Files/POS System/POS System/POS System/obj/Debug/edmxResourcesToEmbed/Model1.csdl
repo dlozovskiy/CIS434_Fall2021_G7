@@ -1,41 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DataPOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="TBLmenuItem">
-    <Key>
-      <PropertyRef Name="MenuID" />
-    </Key>
-    <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MenuType" Type="Int32" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TBLorder">
-    <Key>
-      <PropertyRef Name="OrderID" />
-    </Key>
-    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="TBLorderItem">
-    <Key>
-      <PropertyRef Name="OrderItemID" />
-    </Key>
-    <Property Name="OrderItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="OrderID" Type="Int32" Nullable="false" />
-    <Property Name="MenuID" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TbProductType">
-    <Key>
-      <PropertyRef Name="ProductType" />
-    </Key>
-    <Property Name="ProductType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityContainer Name="DataPOSEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="TBLmenuItems" EntityType="Self.TBLmenuItem" />
-    <EntitySet Name="TBLorders" EntityType="Self.TBLorder" />
-    <EntitySet Name="TBLorderItems" EntityType="Self.TBLorderItem" />
-    <EntitySet Name="TbProductTypes" EntityType="Self.TbProductType" />
-  </EntityContainer>
+  <EntityContainer Name="DataPOSEntities" annotation:LazyLoadingEnabled="true" />
 </Schema>
