@@ -16,5 +16,21 @@ namespace POS_System
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Coffee_Click(object sender, EventArgs e)
+        {
+            DataPOSEntities1 dp = new DataPOSEntities1();
+            TBLmenuItem item1 = new TBLmenuItem() { Description = "Coffee", Price = 2 };
+
+            dp.TBLmenuItems.Add(item1);
+
+            dp.SaveChanges();
+
+        }
     }
 }
