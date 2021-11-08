@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\liang\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

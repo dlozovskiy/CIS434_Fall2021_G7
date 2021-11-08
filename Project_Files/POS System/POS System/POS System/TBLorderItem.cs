@@ -15,9 +15,9 @@ namespace POS_System
     public partial class TBLorderItem
     {
         public int OrderItemID { get; set; }
-        public int OrderID { get; set; }
         public int MenuID { get; set; }
-        public string Description { get; internal set; }
-        public object Price { get; internal set; }
+        public int OrderID { get; set; }
+    
+        public virtual TBLorder TBLorder { get; set; }
     }
 }

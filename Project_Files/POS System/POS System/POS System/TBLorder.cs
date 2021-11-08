@@ -14,7 +14,21 @@ namespace POS_System
     
     public partial class TBLorder
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TBLorder()
+        {
+            this.TBLcharts = new HashSet<TBLchart>();
+            this.TBLorderItems = new HashSet<TBLorderItem>();
+        }
+    
         public int OrderID { get; set; }
         public System.DateTime OrderDate { get; set; }
+        public Nullable<int> tblNum { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBLchart> TBLcharts { get; set; }
+        public virtual TBLchart TBLchart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBLorderItem> TBLorderItems { get; set; }
     }
 }

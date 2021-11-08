@@ -12,18 +12,21 @@ namespace POS_System
     using System;
     using System.Collections.Generic;
     
-    public partial class TbProductType
+    public partial class TBLchart
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TbProductType()
+        public TBLchart()
         {
-            this.TBLmenuItems = new HashSet<TBLmenuItem>();
+            this.TBLorders = new HashSet<TBLorder>();
         }
     
-        public int ProductType { get; set; }
-        public string Description { get; set; }
+        public int TblNum { get; set; }
+        public Nullable<int> TblOrderID { get; set; }
+        public Nullable<System.TimeSpan> TblReserve { get; set; }
+        public string TblStatus { get; set; }
     
+        public virtual TBLorder TBLorder { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TBLmenuItem> TBLmenuItems { get; set; }
+        public virtual ICollection<TBLorder> TBLorders { get; set; }
     }
 }
