@@ -84,6 +84,12 @@
     <Compile Include="AddItems.Designer.cs">
       <DependentUpon>AddItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewItems.Designer.cs">
+      <DependentUpon>ViewItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewItems.resx">
+      <DependentUpon>ViewItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

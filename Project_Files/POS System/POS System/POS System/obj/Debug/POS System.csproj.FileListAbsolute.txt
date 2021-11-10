@@ -31,3 +31,21 @@ C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Fil
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.csproj.CoreCompileInputs.cache
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.exe
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.pdb
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\DataPOS.mdf
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\DataPOS_log.ldf
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\POS System.exe.config
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\POS System.exe
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\POS System.pdb
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\EntityFramework.dll
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\EntityFramework.xml
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.csproj.AssemblyReference.cache
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.AddItems.resources
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.Form1.resources
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.Properties.Resources.resources
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.csproj.GenerateResource.cache
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.csproj.CoreCompileInputs.cache
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.exe
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.pdb
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.ViewItems.resources

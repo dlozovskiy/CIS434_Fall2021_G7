@@ -64,5 +64,15 @@ namespace POS_System
             pos.SaveChanges();
             MessageBox.Show("New Item Saved");
         }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPrice_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

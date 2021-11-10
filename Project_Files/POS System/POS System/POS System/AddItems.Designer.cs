@@ -60,6 +60,7 @@ namespace POS_System
             this.lbPrice.Size = new System.Drawing.Size(40, 17);
             this.lbPrice.TabIndex = 1;
             this.lbPrice.Text = "Price";
+            this.lbPrice.Click += new System.EventHandler(this.lbPrice_Click);
             // 
             // lbType
             // 
@@ -129,6 +130,7 @@ namespace POS_System
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(121, 24);
             this.cbCategory.TabIndex = 11;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // openFileDialog1
             // 
