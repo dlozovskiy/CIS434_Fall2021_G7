@@ -13,10 +13,10 @@ namespace POS_System
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DataPOSEntities1 : DbContext
+    public partial class DataPOSEntities : DbContext
     {
-        public DataPOSEntities1()
-            : base("name=DataPOSEntities1")
+        public DataPOSEntities()
+            : base("name=DataPOSEntities")
         {
         }
     
@@ -25,10 +25,10 @@ namespace POS_System
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<TBLchart> TBLcharts { get; set; }
         public virtual DbSet<TBLmenuItem> TBLmenuItems { get; set; }
         public virtual DbSet<TBLorder> TBLorders { get; set; }
         public virtual DbSet<TBLorderItem> TBLorderItems { get; set; }
         public virtual DbSet<TbProductType> TbProductTypes { get; set; }
-        public virtual DbSet<TBLchart> TBLcharts { get; set; }
     }
 }

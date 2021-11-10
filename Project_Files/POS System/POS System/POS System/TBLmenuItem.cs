@@ -14,6 +14,12 @@ namespace POS_System
     
     public partial class TBLmenuItem
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TBLmenuItem()
+        {
+            this.TBLorderItems = new HashSet<TBLorderItem>();
+        }
+    
         public int MenuID { get; set; }
         public int MenuType { get; set; }
         public string Description { get; set; }
@@ -21,5 +27,7 @@ namespace POS_System
         public byte[] Image { get; set; }
     
         public virtual TbProductType TbProductType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBLorderItem> TBLorderItems { get; set; }
     }
 }
