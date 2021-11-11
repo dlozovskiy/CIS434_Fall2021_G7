@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Data.Objects;
 
 namespace POS_System
 {
@@ -42,8 +43,8 @@ namespace POS_System
         private void FilterList(object sender, EventArgs e)
         {
            
-                ObjectQuery<TBLmenuItem> filteredMnueItem = new ObjectQuery<TBLmenuItem>(
-                    "SELECT VALUE C FROM TBLmenuItems AS C WHERE C.ProductType = " + Filter.SelectedValue, pos);
+                ObjectQuery<TBLmenuItem> filteredMenuItem = new ObjectQuery<TBLmenuItem>(
+                    "SELECT VALUE C FROM TBLmenuItem AS C WHERE C.MenuType = " + Filter.SelectedValue, pos);
             
 
 
