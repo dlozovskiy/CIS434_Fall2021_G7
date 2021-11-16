@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.EntityClient;
 using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
@@ -41,11 +42,14 @@ namespace POS_System
 
         private void FilterList(object sender, EventArgs e)
         {
-           
-                ObjectQuery<TBLmenuItem> filteredMnueItem = new ObjectQuery<TBLmenuItem>(
-                    "SELECT VALUE C FROM TBLmenuItems AS C WHERE C.ProductType = " + Filter.SelectedValue, pos);
-            
 
+            //ObjectQuery<TBLmenuItem> filteredMenuItem = new ObjectQuery<TBLmenuItem>(
+            //    "SELECT VALUE C FROM TBLmenuItems AS C WHERE C.ProductType = " + Filter.SelectedValue, pos);
+            var ToShow = from b in pos.TBLmenuItems
+                         where b.MenuType == (int)Filter.SelectedValue
+                         select b;
+
+            dataGridView1.DataSource = ToShow.ToList();
 
         }
     }

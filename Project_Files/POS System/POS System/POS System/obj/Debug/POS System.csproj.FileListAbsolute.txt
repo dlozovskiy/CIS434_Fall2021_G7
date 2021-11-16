@@ -49,3 +49,4 @@ C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS Syst
 C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.exe
 C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.pdb
 C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.ViewItems.resources
+C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.ViewItems.resources
