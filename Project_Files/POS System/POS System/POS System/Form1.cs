@@ -29,5 +29,12 @@ namespace POS_System
             ViewItems viewItems = new ViewItems();
             viewItems.Show();
         }
+
+        private void btnOpenPOS_Click(object sender, EventArgs e)
+        {
+            POS_form posForm = new POS_form();
+
+            posForm.Show();
+        }
     }
 }

@@ -11,7 +11,6 @@ C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS 
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.Properties.Resources.resources
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.csproj.GenerateResource.cache
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.csproj.CoreCompileInputs.cache
-C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.csproj.CopyComplete
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.exe
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.pdb
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\bin\Debug\DataPOS.mdf
@@ -50,3 +49,7 @@ C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS Syst
 C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.pdb
 C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.ViewItems.resources
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.ViewItems.resources
+C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.AddItems.resources
+C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.Form1.resources
+C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.ViewItems.resources
+C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.POS_form.resources

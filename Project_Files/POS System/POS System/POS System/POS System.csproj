@@ -84,6 +84,12 @@
     <Compile Include="AddItems.Designer.cs">
       <DependentUpon>AddItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="POS_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS_form.Designer.cs">
+      <DependentUpon>POS_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS_form.resx">
+      <DependentUpon>POS_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewItems.resx">
       <DependentUpon>ViewItems.cs</DependentUpon>
