@@ -24,7 +24,7 @@ namespace POS_System
             set
             {
                 orderTotal = value;
-                txtOrderTotal.Text = orderTotal.ToString();
+                txtOrderTotal.Text = String.Format("{0:c}",orderTotal);
             }
         }
 
@@ -80,7 +80,7 @@ namespace POS_System
             menuItems.Add(m);
             UpdateCustomerInformationPanel(m);
 
-            orderTotal = (decimal)m.Price;
+            OrderTotal = OrderTotal+(decimal)m.Price;
 
             lstItemsChosen.SelectedIndex = lstItemsChosen.Items.Count - 1;
         }
@@ -121,6 +121,7 @@ namespace POS_System
         {
             TBLmenuItem selectedItem = (TBLmenuItem)lstItemsChosen.SelectedItem;
             menuItems.Remove(selectedItem);
+            OrderTotal = OrderTotal - (decimal)selectedItem.Price;
         }
     }
 }
