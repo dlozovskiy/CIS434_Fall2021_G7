@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b468e172d0134495beef34e9fbbe5dcf" Name="Diagram1">
-        <EntityTypeShape EntityType="DataPOSModel.TBLchart" Width="1.5" PointX="0.875" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPOSModel.TBLmenuItem" Width="1.5" PointX="4.625" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPOSModel.TBLorder" Width="1.5" PointX="0.875" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPOSModel.TBLorderItem" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPOSModel.TbProductType" Width="1.5" PointX="6.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPOSModel.TBLchart" Width="1.5" PointX="0.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPOSModel.TBLmenuItem" Width="1.5" PointX="5.125" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPOSModel.TBLorder" Width="1.5" PointX="0.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPOSModel.TBLorderItem" Width="1.5" PointX="2.875" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPOSModel.TbProductType" Width="1.5" PointX="7" PointY="3.125" IsExpanded="true" />
         <AssociationConnector Association="DataPOSModel.FK_TBLchart_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="DataPOSModel.FK_TBLorder_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="DataPOSModel.FK_TBLmenuItem_ToTable" ManuallyRouted="false" />

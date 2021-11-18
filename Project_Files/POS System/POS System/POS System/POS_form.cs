@@ -123,5 +123,16 @@ namespace POS_System
             menuItems.Remove(selectedItem);
             OrderTotal = OrderTotal - (decimal)selectedItem.Price;
         }
+
+        private void OpenPaymentEvent(object sender, EventArgs e)
+        {
+            Payment pay = new Payment();
+            pay.Show();
+            pay.GivenPayment += new Payment.PaymentEventMade(payment_PaymentMade);
+        }
+        void payment_PaymentMade(object sender, PaymentEventMadeArg e)
+        {
+            MessageBox.Show(e.PaySuccess1.ToString());
+        }
     }
 }

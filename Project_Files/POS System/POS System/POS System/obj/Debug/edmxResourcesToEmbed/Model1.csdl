@@ -19,9 +19,10 @@
     <Property Name="MenuType" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="TbProductType" Relationship="Self.FK_TBLmenuItem_ToTable" FromRole="TBLmenuItem" ToRole="TbProductType" />
     <NavigationProperty Name="TBLorderItems" Relationship="Self.FK_TBLorderItem_ToTable_1" FromRole="TBLmenuItem" ToRole="TBLorderItem" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="TBLorder">
     <Key>

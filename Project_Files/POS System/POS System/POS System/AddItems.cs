@@ -57,6 +57,7 @@ namespace POS_System
 
             item.Description = txtName.Text;
             item.Price = decimal.Parse(txtPrice.Text);
+            item.Quantity = int.Parse(txtQuantity.Text);
             item.Image = byteData;
             item.MenuType = (int)cbCategory.SelectedValue;
 

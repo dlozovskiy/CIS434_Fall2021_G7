@@ -14,6 +14,7 @@
     <EntitySetMapping Name="TBLmenuItems">
       <EntityTypeMapping TypeName="DataPOSModel.TBLmenuItem">
         <MappingFragment StoreEntitySet="TBLmenuItem">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="MenuID" ColumnName="MenuID" />
           <ScalarProperty Name="MenuType" ColumnName="MenuType" />
           <ScalarProperty Name="Description" ColumnName="Description" />

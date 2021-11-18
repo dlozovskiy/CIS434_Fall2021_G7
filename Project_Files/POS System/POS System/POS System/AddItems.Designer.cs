@@ -40,6 +40,8 @@ namespace POS_System
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.lbQuant = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@ namespace POS_System
             // lbType
             // 
             this.lbType.AutoSize = true;
-            this.lbType.Location = new System.Drawing.Point(12, 66);
+            this.lbType.Location = new System.Drawing.Point(12, 97);
             this.lbType.Name = "lbType";
             this.lbType.Size = new System.Drawing.Size(65, 17);
             this.lbType.TabIndex = 2;
@@ -74,7 +76,7 @@ namespace POS_System
             // lbImage
             // 
             this.lbImage.AutoSize = true;
-            this.lbImage.Location = new System.Drawing.Point(12, 96);
+            this.lbImage.Location = new System.Drawing.Point(12, 124);
             this.lbImage.Name = "lbImage";
             this.lbImage.Size = new System.Drawing.Size(46, 17);
             this.lbImage.TabIndex = 3;
@@ -96,7 +98,7 @@ namespace POS_System
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(15, 161);
+            this.btSave.Location = new System.Drawing.Point(12, 189);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(75, 23);
             this.btSave.TabIndex = 8;
@@ -106,7 +108,7 @@ namespace POS_System
             // 
             // btUpload
             // 
-            this.btUpload.Location = new System.Drawing.Point(15, 116);
+            this.btUpload.Location = new System.Drawing.Point(12, 144);
             this.btUpload.Name = "btUpload";
             this.btUpload.Size = new System.Drawing.Size(75, 23);
             this.btUpload.TabIndex = 9;
@@ -116,7 +118,7 @@ namespace POS_System
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(106, 96);
+            this.pbImage.Location = new System.Drawing.Point(106, 124);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(121, 88);
             this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -126,7 +128,7 @@ namespace POS_System
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(106, 63);
+            this.cbCategory.Location = new System.Drawing.Point(106, 94);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(121, 24);
             this.cbCategory.TabIndex = 11;
@@ -136,11 +138,29 @@ namespace POS_System
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(106, 61);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(100, 22);
+            this.txtQuantity.TabIndex = 13;
+            // 
+            // lbQuant
+            // 
+            this.lbQuant.AutoSize = true;
+            this.lbQuant.Location = new System.Drawing.Point(12, 66);
+            this.lbQuant.Name = "lbQuant";
+            this.lbQuant.Size = new System.Drawing.Size(61, 17);
+            this.lbQuant.TabIndex = 12;
+            this.lbQuant.Text = "Quantity";
+            // 
             // AddItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 234);
+            this.ClientSize = new System.Drawing.Size(375, 332);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.lbQuant);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.btUpload);
@@ -173,5 +193,7 @@ namespace POS_System
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label lbQuant;
     }
 }
