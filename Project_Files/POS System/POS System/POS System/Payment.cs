@@ -55,6 +55,11 @@ namespace POS_System
             }
             
         }
+
+        private void Payment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     public class PaymentEventMadeArg: EventArgs{
         private bool PaySuccess;

@@ -47,6 +47,7 @@ namespace POS_System
             this.lstItemsChosen.Name = "lstItemsChosen";
             this.lstItemsChosen.Size = new System.Drawing.Size(478, 420);
             this.lstItemsChosen.TabIndex = 0;
+            this.lstItemsChosen.SelectedIndexChanged += new System.EventHandler(this.lstItemsChosen_SelectedIndexChanged);
             this.lstItemsChosen.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.FormatListItem);
             // 
             // MenuTabs
@@ -57,6 +58,7 @@ namespace POS_System
             this.MenuTabs.SelectedIndex = 0;
             this.MenuTabs.Size = new System.Drawing.Size(671, 334);
             this.MenuTabs.TabIndex = 2;
+            this.MenuTabs.SelectedIndexChanged += new System.EventHandler(this.MenuTabs_SelectedIndexChanged);
             // 
             // txtInfoPanel
             // 

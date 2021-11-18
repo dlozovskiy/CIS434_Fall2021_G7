@@ -128,12 +128,33 @@ namespace POS_System
         {
             Payment pay = new Payment();
             pay.Show();
-            pay.GivenPayment += new Payment.PaymentEventMade(payment_PaymentMade);
+            pay.GivenPayment += new Payment.PaymentEventMade(paymentSucess);
             pay.PayAmount1 = OrderTotal;
         }
-        void payment_PaymentMade(object sender, PaymentEventMadeArg e)
+        void paymentSucess(object sender, PaymentEventMadeArg e)
         {
-            MessageBox.Show(e.PaySuccess1.ToString());
+            TBLorder order = new TBLorder();
+            order.OrderDate = DateTime.Now;
+            if(e.PaySuccess1 == true)
+            {
+                foreach(TBLmenuItem item in menuItems)
+                {
+                    order.TBLorderItems.Add(new TBLorderItem() { MenuID = item.MenuID });
+                }
+
+                pos.TBLorders.Add(order);
+                pos.SaveChanges();
+            }
+        }
+
+        private void lstItemsChosen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuTabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

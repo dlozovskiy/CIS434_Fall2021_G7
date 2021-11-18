@@ -91,6 +91,7 @@ namespace POS_System
             this.Controls.Add(this.label1);
             this.Name = "Payment";
             this.Text = "Payment";
+            this.Load += new System.EventHandler(this.Payment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
