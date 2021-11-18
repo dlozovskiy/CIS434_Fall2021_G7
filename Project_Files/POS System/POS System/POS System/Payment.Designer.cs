@@ -68,6 +68,7 @@ namespace POS_System
             this.txtPay.Name = "txtPay";
             this.txtPay.Size = new System.Drawing.Size(100, 22);
             this.txtPay.TabIndex = 4;
+            this.txtPay.Text = "$";
             // 
             // label2
             // 

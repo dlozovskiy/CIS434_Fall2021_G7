@@ -22,7 +22,7 @@ namespace POS_System
             get { return PayAmount; }
             set {
                 PayAmount = value;
-                txtPay.Text = String.Format("{0:c}", PayAmount);
+                txtTotal.Text = String.Format("{0:c}", PayAmount);
             }
         }
 
@@ -33,7 +33,27 @@ namespace POS_System
 
         private void PaymentMade(object sender, EventArgs e)
         {
-            GivenPayment(this, new PaymentEventMadeArg() { PaySuccess1 = true });
+            decimal Total = 0;
+
+            try
+            {
+                Total = decimal.Parse(txtTotal.Text.TrimStart('$')) - decimal.Parse(txtPay.Text.TrimStart('$'));
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid amount");
+                return;
+            }
+            if (Total > 0)
+            {
+                txtTotal.Text = Total.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Change: " + String.Format("{0:c}", -Total));
+                GivenPayment(this, new PaymentEventMadeArg() { PaySuccess1 = false });
+            }
+            
         }
     }
     public class PaymentEventMadeArg: EventArgs{

@@ -129,6 +129,7 @@ namespace POS_System
             Payment pay = new Payment();
             pay.Show();
             pay.GivenPayment += new Payment.PaymentEventMade(payment_PaymentMade);
+            pay.PayAmount1 = OrderTotal;
         }
         void payment_PaymentMade(object sender, PaymentEventMadeArg e)
         {
