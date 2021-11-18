@@ -55,3 +55,6 @@ C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS 
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.POS_form.resources
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.POS_form.resources
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.Payment.resources
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.Payment.resources
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.POS_form.resources
+C:\Users\14406\Source\Repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS System.csproj.CopyComplete
