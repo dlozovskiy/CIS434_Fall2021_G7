@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Core.Objects;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,12 +103,6 @@ namespace POS_System
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TBLmenuItem p = new TBLmenuItem() { Description = "Product A", Price = 1.99m };
-            menuItems.Add(p);
-        }
-
         private void FormatListItem(object sender, ListControlConvertEventArgs e)
         {
             string currentDescription = ((TBLmenuItem)e.ListItem).Description;
@@ -127,10 +122,58 @@ namespace POS_System
         private void OpenPaymentEvent(object sender, EventArgs e)
         {
             Payment pay = new Payment();
-            pay.Show();
+            pay.ShowDialog();
             pay.GivenPayment += new Payment.PaymentEventMade(paymentSucess);
             pay.PayAmount1 = OrderTotal;
         }
+
+        private void PrintReceipt()
+        {
+            PrintDialog printDialog = new PrintDialog();
+
+            PrintDocument printDoc = new PrintDocument();
+
+            printDialog.Document = printDoc;
+            printDoc.PrintPage += PrintDoc_PrintPage;
+
+            DialogResult result = printDialog.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                printDoc.Print();
+            }
+        }
+
+        private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics graphic = e.Graphics;
+
+            Font font = new Font("Courier New", 12);
+            SolidBrush brush = new SolidBrush(Color.Black);
+
+            float fontHeight = font.GetHeight();
+
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+
+            graphic.DrawString("Thank you for coming ", new Font("Courier new", 18), brush, startX, startY);
+            foreach(TBLmenuItem item in menuItems)
+            {
+                string itemDescription = item.Description.PadRight(30);
+                string itemTotal = string.Format("{0:c}", item.Price);
+                String itemLine = itemDescription + itemTotal;
+
+                graphic.DrawString(itemLine, font, brush, startX, startY + offset);
+
+                offset = offset + (int)fontHeight + 5;
+            }
+
+            offset = offset + 20;
+            graphic.DrawString("Total to Pay".PadRight(30) + string.Format("{0:c}", OrderTotal), font, brush, startX, startY + offset);
+
+        }
+
         void paymentSucess(object sender, PaymentEventMadeArg e)
         {
             TBLorder order = new TBLorder();
