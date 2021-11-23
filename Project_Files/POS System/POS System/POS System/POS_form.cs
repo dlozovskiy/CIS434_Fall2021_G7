@@ -121,10 +121,13 @@ namespace POS_System
 
         private void OpenPaymentEvent(object sender, EventArgs e)
         {
-            Payment pay = new Payment();
+            Payment pay = new Payment
+            {
+                PayAmount1 = OrderTotal
+            };
             pay.ShowDialog();
             pay.GivenPayment += new Payment.PaymentEventMade(paymentSucess);
-            pay.PayAmount1 = OrderTotal;
+            
         }
 
         private void PrintReceipt()

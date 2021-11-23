@@ -36,5 +36,12 @@ namespace POS_System
 
             posForm.Show();
         }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            DisplaySales displaySales = new DisplaySales();
+            displaySales.Show();
+
+        }
     }
 }

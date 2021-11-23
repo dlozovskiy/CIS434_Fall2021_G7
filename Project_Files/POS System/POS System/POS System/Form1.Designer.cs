@@ -34,6 +34,7 @@ namespace POS_System
             this.btnOpenPOS = new System.Windows.Forms.Button();
             this.lbManage = new System.Windows.Forms.Label();
             this.lbOps = new System.Windows.Forms.Label();
+            this.btnSales = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -87,11 +88,22 @@ namespace POS_System
             this.lbOps.TabIndex = 5;
             this.lbOps.Text = "Operations";
             // 
+            // btnSales
+            // 
+            this.btnSales.Location = new System.Drawing.Point(229, 117);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(150, 30);
+            this.btnSales.TabIndex = 6;
+            this.btnSales.Text = "Sales Graph";
+            this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSales);
             this.Controls.Add(this.lbOps);
             this.Controls.Add(this.lbManage);
             this.Controls.Add(this.btnOpenPOS);
@@ -111,5 +123,6 @@ namespace POS_System
         private System.Windows.Forms.Button btnOpenPOS;
         private System.Windows.Forms.Label lbManage;
         private System.Windows.Forms.Label lbOps;
+        private System.Windows.Forms.Button btnSales;
     }
 }

@@ -35,6 +35,7 @@ namespace POS_System
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnPay = new System.Windows.Forms.Button();
             this.txtOrderTotal = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstItemsChosen
@@ -84,12 +85,12 @@ namespace POS_System
             // BtnPay
             // 
             this.BtnPay.BackColor = System.Drawing.Color.Lime;
-            this.BtnPay.Location = new System.Drawing.Point(35, 462);
+            this.BtnPay.Location = new System.Drawing.Point(35, 460);
             this.BtnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnPay.Name = "BtnPay";
-            this.BtnPay.Size = new System.Drawing.Size(667, 56);
+            this.BtnPay.Size = new System.Drawing.Size(325, 56);
             this.BtnPay.TabIndex = 5;
-            this.BtnPay.Text = "Pay";
+            this.BtnPay.Text = "Pay Now";
             this.BtnPay.UseVisualStyleBackColor = false;
             this.BtnPay.Click += new System.EventHandler(this.OpenPaymentEvent);
             // 
@@ -101,11 +102,21 @@ namespace POS_System
             this.txtOrderTotal.Size = new System.Drawing.Size(261, 22);
             this.txtOrderTotal.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(392, 458);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(314, 56);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Place Order";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // POS_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1308, 546);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtOrderTotal);
             this.Controls.Add(this.BtnPay);
             this.Controls.Add(this.BtnDelete);
@@ -114,7 +125,7 @@ namespace POS_System
             this.Controls.Add(this.lstItemsChosen);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "POS_form";
-            this.Text = "Welocme";
+            this.Text = "Welcome";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +139,6 @@ namespace POS_System
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnPay;
         private System.Windows.Forms.TextBox txtOrderTotal;
+        private System.Windows.Forms.Button button1;
     }
 }
