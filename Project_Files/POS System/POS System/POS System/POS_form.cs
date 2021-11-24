@@ -125,9 +125,15 @@ namespace POS_System
             {
                 PayAmount1 = OrderTotal
             };
-            pay.ShowDialog();
-            pay.GivenPayment += new Payment.PaymentEventMade(paymentSucess);
             
+            pay.GivenPayment += new Payment.PaymentEventMade(paymentSucess);
+            pay.ShowDialog();
+
+        }
+
+        public void Pay_GivenPayment(object sender, PaymentEventMadeArg e)
+        {
+            MessageBox.Show(e.PaySuccess1.ToString());
         }
 
         private void PrintReceipt()

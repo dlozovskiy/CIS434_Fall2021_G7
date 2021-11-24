@@ -51,7 +51,7 @@ namespace POS_System
             else
             {
                 MessageBox.Show("Change: " + String.Format("{0:c}", -Total));
-                GivenPayment(this, new PaymentEventMadeArg() { PaySuccess1 = false });
+                GivenPayment(this, new PaymentEventMadeArg() { PaySuccess1 = true });
             }
             
         }
