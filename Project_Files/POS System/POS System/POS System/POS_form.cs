@@ -191,6 +191,7 @@ namespace POS_System
             {
                 foreach(TBLmenuItem item in menuItems)
                 {
+                    order.OrderStatus = 3;
                     order.TBLorderItems.Add(new TBLorderItem() { MenuID = item.MenuID });
                 }
 

@@ -34,6 +34,8 @@
     <NavigationProperty Name="TBLcharts" Relationship="Self.FK_TBLchart_ToTable" FromRole="TBLorder" ToRole="TBLchart" />
     <NavigationProperty Name="TBLchart" Relationship="Self.FK_TBLorder_ToTable" FromRole="TBLorder" ToRole="TBLchart" />
     <NavigationProperty Name="TBLorderItems" Relationship="Self.FK_TBLorderItem_ToTable" FromRole="TBLorder" ToRole="TBLorderItem" />
+    <Property Name="OrderStatus" Type="Int32" />
+    <NavigationProperty Name="TblOrderStat" Relationship="DataPOSModel.FK_TBLorder_toStat" FromRole="TBLorder" ToRole="TblOrderStat" />
   </EntityType>
   <EntityType Name="TBLorderItem">
     <Key>
@@ -139,5 +141,30 @@
       <End Role="TBLorder" EntitySet="TBLorders" />
       <End Role="TBLorderItem" EntitySet="TBLorderItems" />
     </AssociationSet>
+    <EntitySet Name="TblOrderStats" EntityType="DataPOSModel.TblOrderStat" />
+    <AssociationSet Name="FK_TBLorder_toStat" Association="DataPOSModel.FK_TBLorder_toStat">
+      <End Role="TblOrderStat" EntitySet="TblOrderStats" />
+      <End Role="TBLorder" EntitySet="TBLorders" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="TblOrderStat">
+    <Key>
+      <PropertyRef Name="OrderStat" />
+    </Key>
+    <Property Name="OrderStat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="TBLorders" Relationship="DataPOSModel.FK_TBLorder_toStat" FromRole="TblOrderStat" ToRole="TBLorder" />
+  </EntityType>
+  <Association Name="FK_TBLorder_toStat">
+    <End Type="DataPOSModel.TblOrderStat" Role="TblOrderStat" Multiplicity="0..1" />
+    <End Type="DataPOSModel.TBLorder" Role="TBLorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblOrderStat">
+        <PropertyRef Name="OrderStat" />
+      </Principal>
+      <Dependent Role="TBLorder">
+        <PropertyRef Name="OrderStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

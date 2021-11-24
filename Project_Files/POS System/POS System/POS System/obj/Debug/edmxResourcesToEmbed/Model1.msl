@@ -26,6 +26,7 @@
     <EntitySetMapping Name="TBLorders">
       <EntityTypeMapping TypeName="DataPOSModel.TBLorder">
         <MappingFragment StoreEntitySet="TBLorder">
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
           <ScalarProperty Name="tblNum" ColumnName="tblNum" />
@@ -46,6 +47,14 @@
         <MappingFragment StoreEntitySet="TbProductType">
           <ScalarProperty Name="ProductType" ColumnName="ProductType" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblOrderStats">
+      <EntityTypeMapping TypeName="DataPOSModel.TblOrderStat">
+        <MappingFragment StoreEntitySet="TblOrderStat">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="OrderStat" ColumnName="OrderStat" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -53,5 +53,11 @@ namespace POS_System
             dataGridView1.DataSource = ToShow.ToList();
 
         }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            pos.SaveChanges();
+        }
+
     }
 }

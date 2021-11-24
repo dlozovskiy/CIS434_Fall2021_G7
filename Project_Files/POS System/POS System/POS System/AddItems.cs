@@ -54,16 +54,30 @@ namespace POS_System
         private void btSave_Click(object sender, EventArgs e)
         {
             TBLmenuItem item = new TBLmenuItem();
+            try 
+            {
+                item.Description = txtName.Text;
+                item.Price = decimal.Parse(txtPrice.Text);
+                item.Quantity = int.Parse(txtQuantity.Text);
+                item.Image = byteData;
+                item.MenuType = (int)cbCategory.SelectedValue;
 
-            item.Description = txtName.Text;
-            item.Price = decimal.Parse(txtPrice.Text);
-            item.Quantity = int.Parse(txtQuantity.Text);
-            item.Image = byteData;
-            item.MenuType = (int)cbCategory.SelectedValue;
+                pos.TBLmenuItems.Add(item);
+                pos.SaveChanges();
+                MessageBox.Show("New Item Saved");
+                txtName.Clear();
+                txtPrice.Clear();
+                txtQuantity.Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Please Check Fields");
+            }
+            
 
-            pos.TBLmenuItems.Add(item);
-            pos.SaveChanges();
-            MessageBox.Show("New Item Saved");
+       
+
+            
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)

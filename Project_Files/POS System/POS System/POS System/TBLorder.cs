@@ -24,11 +24,13 @@ namespace POS_System
         public int OrderID { get; set; }
         public System.DateTime OrderDate { get; set; }
         public Nullable<int> tblNum { get; set; }
+        public Nullable<int> OrderStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLchart> TBLcharts { get; set; }
         public virtual TBLchart TBLchart { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLorderItem> TBLorderItems { get; set; }
+        public virtual TblOrderStat TblOrderStat { get; set; }
     }
 }

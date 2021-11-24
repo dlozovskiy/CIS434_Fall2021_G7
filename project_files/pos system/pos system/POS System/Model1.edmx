@@ -32,6 +32,7 @@
           <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderDate" Type="datetime" Nullable="false" />
           <Property Name="tblNum" Type="int" />
+          <Property Name="OrderStatus" Type="int" />
         </EntityType>
         <EntityType Name="TBLorderItem">
           <Key>
@@ -40,6 +41,13 @@
           <Property Name="OrderItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="MenuID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblOrderStat">
+          <Key>
+            <PropertyRef Name="OrderStat" />
+          </Key>
+          <Property Name="OrderStat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TbProductType">
           <Key>
@@ -69,6 +77,18 @@
             </Principal>
             <Dependent Role="TBLmenuItem">
               <PropertyRef Name="MenuType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLorder_toStat">
+          <End Role="TblOrderStat" Type="Self.TblOrderStat" Multiplicity="0..1" />
+          <End Role="TBLorder" Type="Self.TBLorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblOrderStat">
+              <PropertyRef Name="OrderStat" />
+            </Principal>
+            <Dependent Role="TBLorder">
+              <PropertyRef Name="OrderStatus" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -113,6 +133,7 @@
           <EntitySet Name="TBLmenuItem" EntityType="Self.TBLmenuItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLorder" EntityType="Self.TBLorder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLorderItem" EntityType="Self.TBLorderItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblOrderStat" EntityType="Self.TblOrderStat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TbProductType" EntityType="Self.TbProductType" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TBLchart_ToTable" Association="Self.FK_TBLchart_ToTable">
             <End Role="TBLorder" EntitySet="TBLorder" />
@@ -121,6 +142,10 @@
           <AssociationSet Name="FK_TBLmenuItem_ToTable" Association="Self.FK_TBLmenuItem_ToTable">
             <End Role="TbProductType" EntitySet="TbProductType" />
             <End Role="TBLmenuItem" EntitySet="TBLmenuItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLorder_toStat" Association="Self.FK_TBLorder_toStat">
+            <End Role="TblOrderStat" EntitySet="TblOrderStat" />
+            <End Role="TBLorder" EntitySet="TBLorder" />
           </AssociationSet>
           <AssociationSet Name="FK_TBLorder_ToTable" Association="Self.FK_TBLorder_ToTable">
             <End Role="TBLchart" EntitySet="TBLchart" />
@@ -173,6 +198,8 @@
           <NavigationProperty Name="TBLcharts" Relationship="Self.FK_TBLchart_ToTable" FromRole="TBLorder" ToRole="TBLchart" />
           <NavigationProperty Name="TBLchart" Relationship="Self.FK_TBLorder_ToTable" FromRole="TBLorder" ToRole="TBLchart" />
           <NavigationProperty Name="TBLorderItems" Relationship="Self.FK_TBLorderItem_ToTable" FromRole="TBLorder" ToRole="TBLorderItem" />
+          <Property Name="OrderStatus" Type="Int32" />
+          <NavigationProperty Name="TblOrderStat" Relationship="DataPOSModel.FK_TBLorder_toStat" FromRole="TBLorder" ToRole="TblOrderStat" />
         </EntityType>
         <EntityType Name="TBLorderItem">
           <Key>
@@ -278,7 +305,32 @@
             <End Role="TBLorder" EntitySet="TBLorders" />
             <End Role="TBLorderItem" EntitySet="TBLorderItems" />
           </AssociationSet>
+          <EntitySet Name="TblOrderStats" EntityType="DataPOSModel.TblOrderStat" />
+          <AssociationSet Name="FK_TBLorder_toStat" Association="DataPOSModel.FK_TBLorder_toStat">
+            <End Role="TblOrderStat" EntitySet="TblOrderStats" />
+            <End Role="TBLorder" EntitySet="TBLorders" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="TblOrderStat">
+          <Key>
+            <PropertyRef Name="OrderStat" />
+          </Key>
+          <Property Name="OrderStat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="TBLorders" Relationship="DataPOSModel.FK_TBLorder_toStat" FromRole="TblOrderStat" ToRole="TBLorder" />
+        </EntityType>
+        <Association Name="FK_TBLorder_toStat">
+          <End Type="DataPOSModel.TblOrderStat" Role="TblOrderStat" Multiplicity="0..1" />
+          <End Type="DataPOSModel.TBLorder" Role="TBLorder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblOrderStat">
+              <PropertyRef Name="OrderStat" />
+            </Principal>
+            <Dependent Role="TBLorder">
+              <PropertyRef Name="OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -310,6 +362,7 @@
           <EntitySetMapping Name="TBLorders">
             <EntityTypeMapping TypeName="DataPOSModel.TBLorder">
               <MappingFragment StoreEntitySet="TBLorder">
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="tblNum" ColumnName="tblNum" />
@@ -330,6 +383,14 @@
               <MappingFragment StoreEntitySet="TbProductType">
                 <ScalarProperty Name="ProductType" ColumnName="ProductType" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblOrderStats">
+            <EntityTypeMapping TypeName="DataPOSModel.TblOrderStat">
+              <MappingFragment StoreEntitySet="TblOrderStat">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="OrderStat" ColumnName="OrderStat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

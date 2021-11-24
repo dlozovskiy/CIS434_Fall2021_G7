@@ -103,6 +103,9 @@
     <Compile Include="POS_form.Designer.cs">
       <DependentUpon>POS_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="TblOrderStat.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewItems.cs">
       <SubType>Form</SubType>
     </Compile>

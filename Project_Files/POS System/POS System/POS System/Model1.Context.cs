@@ -30,5 +30,6 @@ namespace POS_System
         public virtual DbSet<TBLorder> TBLorders { get; set; }
         public virtual DbSet<TBLorderItem> TBLorderItems { get; set; }
         public virtual DbSet<TbProductType> TbProductTypes { get; set; }
+        public virtual DbSet<TblOrderStat> TblOrderStats { get; set; }
     }
 }

@@ -27,6 +27,7 @@
     <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderDate" Type="datetime" Nullable="false" />
     <Property Name="tblNum" Type="int" />
+    <Property Name="OrderStatus" Type="int" />
   </EntityType>
   <EntityType Name="TBLorderItem">
     <Key>
@@ -35,6 +36,13 @@
     <Property Name="OrderItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderID" Type="int" Nullable="false" />
     <Property Name="MenuID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblOrderStat">
+    <Key>
+      <PropertyRef Name="OrderStat" />
+    </Key>
+    <Property Name="OrderStat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="TbProductType">
     <Key>
@@ -64,6 +72,18 @@
       </Principal>
       <Dependent Role="TBLmenuItem">
         <PropertyRef Name="MenuType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLorder_toStat">
+    <End Role="TblOrderStat" Type="Self.TblOrderStat" Multiplicity="0..1" />
+    <End Role="TBLorder" Type="Self.TBLorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblOrderStat">
+        <PropertyRef Name="OrderStat" />
+      </Principal>
+      <Dependent Role="TBLorder">
+        <PropertyRef Name="OrderStatus" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -108,6 +128,7 @@
     <EntitySet Name="TBLmenuItem" EntityType="Self.TBLmenuItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLorder" EntityType="Self.TBLorder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLorderItem" EntityType="Self.TBLorderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblOrderStat" EntityType="Self.TblOrderStat" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TbProductType" EntityType="Self.TbProductType" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_TBLchart_ToTable" Association="Self.FK_TBLchart_ToTable">
       <End Role="TBLorder" EntitySet="TBLorder" />
@@ -116,6 +137,10 @@
     <AssociationSet Name="FK_TBLmenuItem_ToTable" Association="Self.FK_TBLmenuItem_ToTable">
       <End Role="TbProductType" EntitySet="TbProductType" />
       <End Role="TBLmenuItem" EntitySet="TBLmenuItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLorder_toStat" Association="Self.FK_TBLorder_toStat">
+      <End Role="TblOrderStat" EntitySet="TblOrderStat" />
+      <End Role="TBLorder" EntitySet="TBLorder" />
     </AssociationSet>
     <AssociationSet Name="FK_TBLorder_ToTable" Association="Self.FK_TBLorder_ToTable">
       <End Role="TBLchart" EntitySet="TBLchart" />

@@ -31,6 +31,7 @@ namespace POS_System
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Filter = new System.Windows.Forms.ComboBox();
+            this.btnChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +58,22 @@ namespace POS_System
             this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
             this.Filter.SelectionChangeCommitted += new System.EventHandler(this.FilterList);
             // 
+            // btnChange
+            // 
+            this.btnChange.Location = new System.Drawing.Point(12, 521);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(309, 60);
+            this.btnChange.TabIndex = 2;
+            this.btnChange.Text = "Save Changes";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
             // ViewItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1168, 667);
+            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ViewItems";
@@ -75,5 +87,6 @@ namespace POS_System
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox Filter;
+        private System.Windows.Forms.Button btnChange;
     }
 }
