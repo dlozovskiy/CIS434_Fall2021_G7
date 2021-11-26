@@ -62,3 +62,4 @@ C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS 
 C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.Payment.resources
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.DisplaySales.resources
 C:\Users\Daniel Lozovskiy\source\repos\dlozovskiy\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.OrderView.resources
+C:\Users\lewis\Documents\GitHub\CIS434_Fall2021_G7\Project_Files\POS System\POS System\POS System\obj\Debug\POS_System.OrderView.resources
