@@ -17,6 +17,7 @@ namespace POS_System
         public int OrderItemID { get; set; }
         public int OrderID { get; set; }
         public int MenuID { get; set; }
+        public string Custom { get; set; }
     
         public virtual TBLmenuItem TBLmenuItem { get; set; }
         public virtual TBLorder TBLorder { get; set; }

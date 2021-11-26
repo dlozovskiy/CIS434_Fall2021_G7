@@ -46,6 +46,7 @@
     <Property Name="MenuID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="TBLmenuItem" Relationship="Self.FK_TBLorderItem_ToTable_1" FromRole="TBLorderItem" ToRole="TBLmenuItem" />
     <NavigationProperty Name="TBLorder" Relationship="Self.FK_TBLorderItem_ToTable" FromRole="TBLorderItem" ToRole="TBLorder" />
+    <Property Name="Custom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="TbProductType">
     <Key>

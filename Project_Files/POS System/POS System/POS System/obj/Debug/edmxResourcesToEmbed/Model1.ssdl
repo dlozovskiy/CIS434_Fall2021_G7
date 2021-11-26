@@ -36,6 +36,7 @@
     <Property Name="OrderItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderID" Type="int" Nullable="false" />
     <Property Name="MenuID" Type="int" Nullable="false" />
+    <Property Name="Custom" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="TblOrderStat">
     <Key>

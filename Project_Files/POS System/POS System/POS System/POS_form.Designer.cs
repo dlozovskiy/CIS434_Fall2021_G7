@@ -36,6 +36,8 @@ namespace POS_System
             this.BtnPay = new System.Windows.Forms.Button();
             this.txtOrderTotal = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCustom = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lstItemsChosen
@@ -43,10 +45,10 @@ namespace POS_System
             this.lstItemsChosen.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstItemsChosen.FormattingEnabled = true;
             this.lstItemsChosen.ItemHeight = 16;
-            this.lstItemsChosen.Location = new System.Drawing.Point(800, 17);
+            this.lstItemsChosen.Location = new System.Drawing.Point(797, 11);
             this.lstItemsChosen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstItemsChosen.Name = "lstItemsChosen";
-            this.lstItemsChosen.Size = new System.Drawing.Size(478, 420);
+            this.lstItemsChosen.Size = new System.Drawing.Size(478, 372);
             this.lstItemsChosen.TabIndex = 0;
             this.lstItemsChosen.SelectedIndexChanged += new System.EventHandler(this.lstItemsChosen_SelectedIndexChanged);
             this.lstItemsChosen.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.FormatListItem);
@@ -111,11 +113,29 @@ namespace POS_System
             this.button1.Text = "Place Order";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(794, 395);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Customization";
+            // 
+            // txtCustom
+            // 
+            this.txtCustom.Location = new System.Drawing.Point(797, 415);
+            this.txtCustom.Name = "txtCustom";
+            this.txtCustom.Size = new System.Drawing.Size(475, 22);
+            this.txtCustom.TabIndex = 9;
+            // 
             // POS_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1308, 546);
+            this.Controls.Add(this.txtCustom);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtOrderTotal);
             this.Controls.Add(this.BtnPay);
@@ -140,5 +160,7 @@ namespace POS_System
         private System.Windows.Forms.Button BtnPay;
         private System.Windows.Forms.TextBox txtOrderTotal;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCustom;
     }
 }

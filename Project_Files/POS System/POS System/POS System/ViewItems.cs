@@ -20,20 +20,54 @@ namespace POS_System
         {
             InitializeComponent();
 
-            dataGridView1.DataSource = pos.TBLmenuItems.ToList();
+            
+            
+            Filter.DisplayMember = "Description";
+            Filter.ValueMember = "ProductType";
+            Filter.DataSource = pos.TbProductTypes.ToList();
+
+            dataGridView1.DataSource = returnFilter().ToList();
+
 
             dataGridView1.Columns["MenuType"].Visible = false;
             dataGridView1.Columns["TbProductType"].Visible = false;
             dataGridView1.Columns["TBLorderItems"].Visible = false;
 
-            Filter.DataSource = pos.TbProductTypes.ToList();
-            Filter.DisplayMember = "Description";
-            Filter.ValueMember = "ProductType";
+
+            //Delete Button
+
+            var deleteButton = new DataGridViewButtonColumn();
+            deleteButton.Name = "dataGridViewDeleteButton";
+            deleteButton.HeaderText = "Delete";
+            deleteButton.Text = "Delete";
+            deleteButton.UseColumnTextForButtonValue = true;
+            this.dataGridView1.Columns.Add(deleteButton);
+          
+
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //if click is on new row or header row
+            if (e.RowIndex == dataGridView1.NewRowIndex || e.RowIndex < 0)
+                return;
 
+            //Check if click is on specific column 
+            if (e.ColumnIndex == dataGridView1.Columns["dataGridViewDeleteButton"].Index)
+            {
+                //Put some logic here, for example to remove row from your binding list.
+
+                var toDelete = (TBLmenuItem)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                
+
+                pos.TBLmenuItems.Remove(toDelete);
+                pos.SaveChanges();
+                dataGridView1.DataSource = returnFilter().ToList();
+                // Or
+                // var data = (Product)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                // do something 
+            }
         }
 
         private void Filter_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,9 +88,18 @@ namespace POS_System
 
         }
 
+        private IQueryable<TBLmenuItem> returnFilter()
+        {
+            var ToShow = from b in pos.TBLmenuItems
+                         where b.MenuType == (int)Filter.SelectedValue
+                         select b;
+            return ToShow;
+        }
+
         private void btnChange_Click(object sender, EventArgs e)
         {
             pos.SaveChanges();
+            
         }
 
     }

@@ -91,6 +91,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderView.Designer.cs">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderView.resx">
+      <DependentUpon>OrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>

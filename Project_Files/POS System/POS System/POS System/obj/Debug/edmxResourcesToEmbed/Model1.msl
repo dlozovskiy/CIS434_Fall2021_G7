@@ -36,6 +36,7 @@
     <EntitySetMapping Name="TBLorderItems">
       <EntityTypeMapping TypeName="DataPOSModel.TBLorderItem">
         <MappingFragment StoreEntitySet="TBLorderItem">
+          <ScalarProperty Name="Custom" ColumnName="Custom" />
           <ScalarProperty Name="OrderItemID" ColumnName="OrderItemID" />
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="MenuID" ColumnName="MenuID" />

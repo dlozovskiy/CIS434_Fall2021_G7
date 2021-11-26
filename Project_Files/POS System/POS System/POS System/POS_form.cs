@@ -191,12 +191,17 @@ namespace POS_System
             {
                 foreach(TBLmenuItem item in menuItems)
                 {
-                    order.OrderStatus = 3;
-                    order.TBLorderItems.Add(new TBLorderItem() { MenuID = item.MenuID });
+                    order.OrderStatus = 1;
+                    item.Quantity -= 1;
+                    order.TBLorderItems.Add(new TBLorderItem() { MenuID = item.MenuID, Custom = txtCustom.ToString()});
                 }
 
                 pos.TBLorders.Add(order);
                 pos.SaveChanges();
+                PrintReceipt();
+                menuItems.Clear();
+                orderTotal = 0;
+                
             }
         }
 
@@ -209,5 +214,7 @@ namespace POS_System
         {
 
         }
+
+       
     }
 }

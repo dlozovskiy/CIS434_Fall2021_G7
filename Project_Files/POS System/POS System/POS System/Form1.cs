@@ -43,5 +43,11 @@ namespace POS_System
             displaySales.Show();
 
         }
+
+        private void viewOrders_Click(object sender, EventArgs e)
+        {
+            OrderView viewOrder = new OrderView();
+            viewOrder.Show();
+        }
     }
 }
