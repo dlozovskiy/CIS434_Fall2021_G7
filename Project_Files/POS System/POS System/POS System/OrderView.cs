@@ -16,6 +16,7 @@ namespace POS_System
         private BindingList<TBLorderItem> orderItems = new BindingList<TBLorderItem>();
         private BindingList<TBLmenuItem> orderMenu = new BindingList<TBLmenuItem>();
         private DataPOSEntities pos = new DataPOSEntities();
+        private TBLorder lastSelected;
 
         public OrderView()
         {
@@ -35,9 +36,11 @@ namespace POS_System
         }
         private void selectOrder()
         {
+            
             int orderStatIndex = 0;
             foreach (TabPage ot in orderTabs.TabPages)
             {
+                ot.Controls.Clear();
                 var ToShow = from b in pos.TBLorders
                              where b.OrderStatus == orderStatIndex
                              select b;
@@ -49,10 +52,9 @@ namespace POS_System
                 {
                     Button b = new Button();
                     b.Size = new Size(100, 100);
-                    b.Text = tb.OrderDate.ToString();
+                    b.Text = tb.OrderID.ToString();
                     b.Tag = tb;
                     b.Click += new EventHandler(OrderDetailList);
-                    orderItems.Clear();
                     flp.Controls.Add(b);
                 }
                 orderStatIndex += 1;
@@ -68,6 +70,7 @@ namespace POS_System
             Button b = (Button)sender;
 
             TBLorder o = (TBLorder)b.Tag;
+            lastSelected = o;
             int id = o.OrderID;
 
             var itemsInOrder = from item in pos.TBLorderItems
@@ -98,6 +101,29 @@ namespace POS_System
             string currentDescriptionPadding = currentDescription.PadRight(30);
 
             e.Value = currentDescriptionPadding;
+        }
+
+        private void btnServed_Click(object sender, EventArgs e)
+        {
+            if(lastSelected != null)
+            {
+           
+                lastSelected.OrderStatus = 2;
+                pos.SaveChanges();
+                selectOrder();
+            }
+           
+        }
+
+        private void btnComplete_Click(object sender, EventArgs e)
+        {
+            if(lastSelected != null)
+            {
+                lastSelected.OrderStatus = 3;
+                pos.SaveChanges();
+                selectOrder();
+            }
+            
         }
     }
 }

@@ -41,6 +41,7 @@
           <Property Name="OrderItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="Custom" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="TblOrderStat">
           <Key>
@@ -210,6 +211,7 @@
           <Property Name="MenuID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TBLmenuItem" Relationship="Self.FK_TBLorderItem_ToTable_1" FromRole="TBLorderItem" ToRole="TBLmenuItem" />
           <NavigationProperty Name="TBLorder" Relationship="Self.FK_TBLorderItem_ToTable" FromRole="TBLorderItem" ToRole="TBLorder" />
+          <Property Name="Custom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TbProductType">
           <Key>
@@ -372,6 +374,7 @@
           <EntitySetMapping Name="TBLorderItems">
             <EntityTypeMapping TypeName="DataPOSModel.TBLorderItem">
               <MappingFragment StoreEntitySet="TBLorderItem">
+                <ScalarProperty Name="Custom" ColumnName="Custom" />
                 <ScalarProperty Name="OrderItemID" ColumnName="OrderItemID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="MenuID" ColumnName="MenuID" />

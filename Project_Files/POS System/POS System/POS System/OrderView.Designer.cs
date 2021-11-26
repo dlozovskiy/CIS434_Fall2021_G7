@@ -72,6 +72,7 @@ namespace POS_System
             this.btnServed.TabIndex = 3;
             this.btnServed.Text = "Serve Order";
             this.btnServed.UseVisualStyleBackColor = true;
+            this.btnServed.Click += new System.EventHandler(this.btnServed_Click);
             // 
             // btnComplete
             // 
@@ -81,6 +82,7 @@ namespace POS_System
             this.btnComplete.TabIndex = 4;
             this.btnComplete.Text = "Complete";
             this.btnComplete.UseVisualStyleBackColor = true;
+            this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
             // OrderView
             // 

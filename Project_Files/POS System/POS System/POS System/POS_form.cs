@@ -200,7 +200,7 @@ namespace POS_System
                 pos.SaveChanges();
                 PrintReceipt();
                 menuItems.Clear();
-                orderTotal = 0;
+                OrderTotal = 0;
                 
             }
         }
