@@ -125,5 +125,15 @@ namespace POS_System
             }
             
         }
+
+        private void btnPaid_Click(object sender, EventArgs e)
+        {
+            if (lastSelected != null)
+            {
+                lastSelected.OrderStatus = 1;
+                pos.SaveChanges();
+                selectOrder();
+            }
+        }
     }
 }

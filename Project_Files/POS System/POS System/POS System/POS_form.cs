@@ -215,6 +215,24 @@ namespace POS_System
 
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TBLorder order = new TBLorder();
+            order.OrderDate = DateTime.Now;
+            
+            
+                foreach (TBLmenuItem item in menuItems)
+                {
+                    order.OrderStatus = 0;
+                    item.Quantity -= 1;
+                    order.TBLorderItems.Add(new TBLorderItem() { MenuID = item.MenuID, Custom = txtCustom.ToString() });
+                }
+
+                pos.TBLorders.Add(order);
+                pos.SaveChanges();
+                MessageBox.Show("Order " + order.OrderID + " has been placed");
+                menuItems.Clear();
+                OrderTotal = 0;
+        }
     }
 }

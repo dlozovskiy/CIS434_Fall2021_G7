@@ -63,6 +63,7 @@ namespace POS_System
             this.btnPaid.TabIndex = 2;
             this.btnPaid.Text = "Pay Order";
             this.btnPaid.UseVisualStyleBackColor = true;
+            this.btnPaid.Click += new System.EventHandler(this.btnPaid_Click);
             // 
             // btnServed
             // 
