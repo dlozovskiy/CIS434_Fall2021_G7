@@ -1,63 +1,56 @@
 <html>
 <head>
-<title>Profile And Contributions</title>
-<img src="images/Apple_logo.jpg" ALIGN = "left"  height="20%">
-    <p><h1>Food ordering System</h1></p>
-    <p><h4>EECS Department<br />Cleveland State University<br />Fall 2021</h4></p>
-	<br />
+<title>POS</title>
+<p><h1>Point of Sale Interface</h1>
+  <center><p><img src="images/(4)POS.jpg"height = "50%"></p></center>
 </head>
-<body>	
-<p><h3>Contributions</h3></p>
-<p>Here is a list of the contributions each team member made</p>
-<div class="row">
-  <div class="column"> 
-	<h3>Daniel</h3>
-	<p><li>Proposal Organization</p>
-	<p><li>Methodology</p>
-	<p><li>Project Timeline</p>
-	</div>
-  
-  <div class="column"> 
-	<h3>Qing</h3>
-	<p><li>Introduction</p>
-	<p><li>Objectives</p>
-	<p><li>Conclusion</p>
-	</div>
-  
-  <div class="column"> 
-	<h3>Zack</h3>
-	<p><li>Abstract</p>
-	<p><li>Project Contributions and Knowledge</p>
-	<p><li>Professional Awareness</p>
-	</div>
-</div>
 
-<h3>Member Profiles</h3>
-<h3>
-    <ul>
-        <p><li><a href="Daniel bio.html">Daniel Lozovskiy</a>
-        <p><li><a href="Jane bio.html">Qing Liang</a>
-        <p><li><a href="Zack bio.html">Zack Lewis</a>
-</h3>
+<body>	
+  <p> Here is the Point of Sale interface of the ordering system. 
+    All the menu items are sorted by their respective category.
+     Once an item is added to the order, it will appear in a list with the items price on the right.
+     A total of the order will be displayed. You will have the option for placing the order or paying the order immediatly.
+  </p>
+
+  <h2>
+    Adding items to the order
+  </h2>
+  <ul>
+    <p>1. Select the category of the item the customer would like</p>
+    <p>2. Press the button label for the item the customer would like to add to their order</p>
+    <p> The item will now appear in the order list and its cost will be added to the total</p>
+  </ul>
+
+  <h2>
+    Removing items from the order
+  </h2>
+  <ul>
+    <p>1. Select the item to remove in the order list on the right</p>
+    <p>2. Press "Delete" to remove the selected item</p>
+    <p> The item will be removed and its cost will be substracted from the total</p>
+
+  </ul>
+
+  <h2>
+    Place the order
+  </h2>
+  <ul>
+    <p>1. Once the order is finalized, press "Place Order" to complete the order</p>
+    <p>Placing an order will create a new order, however it will not be marked as paid.
+      a message box will show with confirmation of the order number.
+    </p>
+  </ul>
+
+  <h2>
+    Pay now for the order
+  </h2>
+  <ul>
+    <p>1. Press the green "Pay Now" button to open up the payment dialogue</p>
+    <p>2. Once the payment dialogue opens, enter the amount tendered for payment</p>
+    <p>3. If the amount tendered is sufficient to pay for the order, the order will be placed. 
+      A message will appear with the amount of change due. A receipt will then print</p>
+    <p>4. If there is an error, a message will appear indicating there has been an error.</p>
+  </ul>
+
 </body>
 </html>
-
-<style>
-.column {
-  float: left;
-  width: 33.33%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-</style>

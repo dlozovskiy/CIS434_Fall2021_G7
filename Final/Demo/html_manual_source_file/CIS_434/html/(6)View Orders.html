@@ -1,63 +1,34 @@
 <html>
 <head>
-<title>Profile And Contributions</title>
-<img src="images/Apple_logo.jpg" ALIGN = "left"  height="20%">
-    <p><h1>Food ordering System</h1></p>
-    <p><h4>EECS Department<br />Cleveland State University<br />Fall 2021</h4></p>
-	<br />
+<title>View Orders</title>
+<p><h1>View and Manage Orders</h1>
+  <center><p><img src="images/(6)OrderManagment.jpg" height="50%"></p></center>
 </head>
-<body>	
-<p><h3>Contributions</h3></p>
-<p>Here is a list of the contributions each team member made</p>
-<div class="row">
-  <div class="column"> 
-	<h3>Daniel</h3>
-	<p><li>Proposal Organization</p>
-	<p><li>Methodology</p>
-	<p><li>Project Timeline</p>
-	</div>
-  
-  <div class="column"> 
-	<h3>Qing</h3>
-	<p><li>Introduction</p>
-	<p><li>Objectives</p>
-	<p><li>Conclusion</p>
-	</div>
-  
-  <div class="column"> 
-	<h3>Zack</h3>
-	<p><li>Abstract</p>
-	<p><li>Project Contributions and Knowledge</p>
-	<p><li>Professional Awareness</p>
-	</div>
-</div>
 
-<h3>Member Profiles</h3>
-<h3>
-    <ul>
-        <p><li><a href="Daniel bio.html">Daniel Lozovskiy</a>
-        <p><li><a href="Jane bio.html">Qing Liang</a>
-        <p><li><a href="Zack bio.html">Zack Lewis</a>
-</h3>
+<body>	
+<p>Here is the window that will allow you to view and manage the status of an order. There are four different status for an order:
+  "Open", "Paid","Served","Complete". The orders will be sorted according to their status in the table and by their order number.
+  Selecting the order will allow the user to change the order status and view the items in that order.
+</p>
+
+<h2>View an order</h2>
+<ul>
+  <p>1. Navigate the order status tabs to locate the order number</p>
+  <p>2. Press the button labeled with the order number you would like to view</p>
+  <p>3. The order contents will appear in the list on the right.</p>
+</ul>
+
+<h2>Change an order's status</h2>
+<ul>
+  <p>1. Navigate the order status tabs to locate the order number</p>
+  <p>2. Press the button labeled with the order number you would like to update</p>
+  <p>3. Update the order status by pressing a bottom button</p>
+  <ul>
+    <p>a. "Pay Order" will move the order to "Paid</p>
+    <p>b. "Serve Order" will move the order to "Served"</p>
+    <p>c. "Complete" will move the order to "Complete"</p>
+  </ul>
+
+</ul>
 </body>
 </html>
-
-<style>
-.column {
-  float: left;
-  width: 33.33%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-</style>
