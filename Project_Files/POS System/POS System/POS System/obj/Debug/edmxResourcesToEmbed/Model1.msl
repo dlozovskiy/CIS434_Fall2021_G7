@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataPOSModelStoreContainer" CdmEntityContainer="DataPOSEntities">
+    <EntitySetMapping Name="TBLcharts">
+      <EntityTypeMapping TypeName="DataPOSModel.TBLchart">
+        <MappingFragment StoreEntitySet="TBLchart">
+          <ScalarProperty Name="TblNum" ColumnName="TblNum" />
+          <ScalarProperty Name="TblOrderID" ColumnName="TblOrderID" />
+          <ScalarProperty Name="TblReserve" ColumnName="TblReserve" />
+          <ScalarProperty Name="TblStatus" ColumnName="TblStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLmenuItems">
+      <EntityTypeMapping TypeName="DataPOSModel.TBLmenuItem">
+        <MappingFragment StoreEntitySet="TBLmenuItem">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="MenuType" ColumnName="MenuType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLorders">
+      <EntityTypeMapping TypeName="DataPOSModel.TBLorder">
+        <MappingFragment StoreEntitySet="TBLorder">
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="tblNum" ColumnName="tblNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLorderItems">
+      <EntityTypeMapping TypeName="DataPOSModel.TBLorderItem">
+        <MappingFragment StoreEntitySet="TBLorderItem">
+          <ScalarProperty Name="Custom" ColumnName="Custom" />
+          <ScalarProperty Name="OrderItemID" ColumnName="OrderItemID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TbProductTypes">
+      <EntityTypeMapping TypeName="DataPOSModel.TbProductType">
+        <MappingFragment StoreEntitySet="TbProductType">
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblOrderStats">
+      <EntityTypeMapping TypeName="DataPOSModel.TblOrderStat">
+        <MappingFragment StoreEntitySet="TblOrderStat">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="OrderStat" ColumnName="OrderStat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
