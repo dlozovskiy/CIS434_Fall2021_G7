@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataPOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBLchart">
+    <Key>
+      <PropertyRef Name="TblNum" />
+    </Key>
+    <Property Name="TblNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TblOrderID" Type="int" />
+    <Property Name="TblReserve" Type="time" Precision="7" />
+    <Property Name="TblStatus" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLmenuItem">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuType" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="Image" Type="image" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLorder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="tblNum" Type="int" />
+    <Property Name="OrderStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLorderItem">
+    <Key>
+      <PropertyRef Name="OrderItemID" />
+    </Key>
+    <Property Name="OrderItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="MenuID" Type="int" Nullable="false" />
+    <Property Name="Custom" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblOrderStat">
+    <Key>
+      <PropertyRef Name="OrderStat" />
+    </Key>
+    <Property Name="OrderStat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TbProductType">
+    <Key>
+      <PropertyRef Name="ProductType" />
+    </Key>
+    <Property Name="ProductType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_TBLchart_ToTable">
+    <End Role="TBLorder" Type="Self.TBLorder" Multiplicity="0..1" />
+    <End Role="TBLchart" Type="Self.TBLchart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLorder">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="TBLchart">
+        <PropertyRef Name="TblOrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLmenuItem_ToTable">
+    <End Role="TbProductType" Type="Self.TbProductType" Multiplicity="1" />
+    <End Role="TBLmenuItem" Type="Self.TBLmenuItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TbProductType">
+        <PropertyRef Name="ProductType" />
+      </Principal>
+      <Dependent Role="TBLmenuItem">
+        <PropertyRef Name="MenuType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLorder_toStat">
+    <End Role="TblOrderStat" Type="Self.TblOrderStat" Multiplicity="0..1" />
+    <End Role="TBLorder" Type="Self.TBLorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblOrderStat">
+        <PropertyRef Name="OrderStat" />
+      </Principal>
+      <Dependent Role="TBLorder">
+        <PropertyRef Name="OrderStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLorder_ToTable">
+    <End Role="TBLchart" Type="Self.TBLchart" Multiplicity="0..1" />
+    <End Role="TBLorder" Type="Self.TBLorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLchart">
+        <PropertyRef Name="TblNum" />
+      </Principal>
+      <Dependent Role="TBLorder">
+        <PropertyRef Name="tblNum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLorderItem_ToTable">
+    <End Role="TBLorder" Type="Self.TBLorder" Multiplicity="1" />
+    <End Role="TBLorderItem" Type="Self.TBLorderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLorder">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="TBLorderItem">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLorderItem_ToTable_1">
+    <End Role="TBLmenuItem" Type="Self.TBLmenuItem" Multiplicity="1" />
+    <End Role="TBLorderItem" Type="Self.TBLorderItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLmenuItem">
+        <PropertyRef Name="MenuID" />
+      </Principal>
+      <Dependent Role="TBLorderItem">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DataPOSModelStoreContainer">
+    <EntitySet Name="TBLchart" EntityType="Self.TBLchart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLmenuItem" EntityType="Self.TBLmenuItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLorder" EntityType="Self.TBLorder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLorderItem" EntityType="Self.TBLorderItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblOrderStat" EntityType="Self.TblOrderStat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TbProductType" EntityType="Self.TbProductType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TBLchart_ToTable" Association="Self.FK_TBLchart_ToTable">
+      <End Role="TBLorder" EntitySet="TBLorder" />
+      <End Role="TBLchart" EntitySet="TBLchart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLmenuItem_ToTable" Association="Self.FK_TBLmenuItem_ToTable">
+      <End Role="TbProductType" EntitySet="TbProductType" />
+      <End Role="TBLmenuItem" EntitySet="TBLmenuItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLorder_toStat" Association="Self.FK_TBLorder_toStat">
+      <End Role="TblOrderStat" EntitySet="TblOrderStat" />
+      <End Role="TBLorder" EntitySet="TBLorder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLorder_ToTable" Association="Self.FK_TBLorder_ToTable">
+      <End Role="TBLchart" EntitySet="TBLchart" />
+      <End Role="TBLorder" EntitySet="TBLorder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLorderItem_ToTable" Association="Self.FK_TBLorderItem_ToTable">
+      <End Role="TBLorder" EntitySet="TBLorder" />
+      <End Role="TBLorderItem" EntitySet="TBLorderItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLorderItem_ToTable_1" Association="Self.FK_TBLorderItem_ToTable_1">
+      <End Role="TBLmenuItem" EntitySet="TBLmenuItem" />
+      <End Role="TBLorderItem" EntitySet="TBLorderItem" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
