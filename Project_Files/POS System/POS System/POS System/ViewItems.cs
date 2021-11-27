@@ -20,8 +20,6 @@ namespace POS_System
         {
             InitializeComponent();
 
-            
-            
             Filter.DisplayMember = "Description";
             Filter.ValueMember = "ProductType";
             Filter.DataSource = pos.TbProductTypes.ToList();
