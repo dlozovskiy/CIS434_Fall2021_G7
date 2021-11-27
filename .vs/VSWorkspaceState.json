@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Project_Files",
+    "\\Project_Files\\POS System",
+    "\\Project_Files\\POS System\\POS System",
+    "\\Project_Files\\POS System\\POS System\\POS System"
   ],
-  "SelectedNode": "\\POS System.sln",
+  "SelectedNode": "\\Project_Files\\POS System\\POS System\\POS System\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
